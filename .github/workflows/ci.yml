@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Récupérer le code du repo sur la machine
+      - uses: actions/checkout@v4
+
+      # 2. Installer uv (action officielle d'Astral)
+      - uses: astral-sh/setup-uv@v6
+
+      # 3. Installer Python + les dépendances à partir de uv.lock
+      - name: Install dependencies
+        run: uv sync --locked
+
+      # 4. Lancer la validation des données
+      - name: Validate data
+        run: uv run python -m src.validation.validate_data
