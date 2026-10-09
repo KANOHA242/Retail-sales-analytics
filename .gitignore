@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Generated data (rebuilt by the pipeline)
+data/processed/*
+!data/processed/.gitkeep
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/

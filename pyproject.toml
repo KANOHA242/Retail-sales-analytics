@@ -1,0 +1,18 @@
+[project]
+name = "retail-sales-analytics"
+version = "0.1.0"
+description = "End-to-end retail sales & profitability analytics pipeline (Superstore dataset)"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pandas>=3.0.6",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
