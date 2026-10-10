@@ -84,7 +84,7 @@ Répartition des lignes par année : 2014 : 1 993 · 2015 : 2 102 · 2016 : 2 58
 |----------|--------|-------------------------------|
 | `Order Date` et `Ship Date` en texte | Impossible d'analyser par mois/année ou de calculer un délai | Convertir en date avec le format explicite `%m/%d/%Y` |
 | `Postal Code` stocké en nombre | 449 codes de Nouvelle-Angleterre / New Jersey perdent leur zéro initial (`02108` → `2108`) | Convertir en texte sur 5 caractères avec zéros à gauche |
-| Doublon potentiel (Row ID 3406 / 3407) | Ventes et profit comptés deux fois si c'est une erreur | À trancher : vrai doublon ou deux lignes légitimes ? Documenter la décision |
+| Doublon potentiel (Row ID 3406 / 3407) | Ventes et profit comptés deux fois si c'est une erreur | **Conservé** : aucune preuve d'erreur, achat répété plausible, impact négligeable (2 lignes sur 9 994). Signalé en avertissement par la validation |
 | `Product ID` non unique par nom | Un « top produits » par `Product ID` peut mélanger deux produits | Pour le classement des produits, regrouper sur `Product ID` + `Product Name` |
 | `Row ID`, `Country` sans valeur analytique | Bruit dans les tables | Peuvent être exclues des tables analytiques |
 | Noms de colonnes avec espaces et tirets | Requêtes SQL (DuckDB) moins pratiques | Renommer en `snake_case` (`order_date`, `sub_category`…) |

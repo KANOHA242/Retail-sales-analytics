@@ -24,3 +24,7 @@ jobs:
       # 4. Lancer la validation des données
       - name: Validate data
         run: uv run python -m src.validation.validate_data
+
+      # 5. Lancer la transformation des données 
+      - name: Transform data
+        run: uv run python -m src.transformation.transform_data
