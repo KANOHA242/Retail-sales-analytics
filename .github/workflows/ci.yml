@@ -28,3 +28,7 @@ jobs:
       # 5. Lancer la transformation des données 
       - name: Transform data
         run: uv run python -m src.transformation.transform_data
+
+      # 6. Lancer l'export 
+      - name: Export data
+        run: uv run python -m src.analytics.export_data
